@@ -1,0 +1,44 @@
+
+:root {
+    --color-primario: hsl(0, 0%, 34%);
+    --color-secundario: hsl(50, 100%, 65%);
+    --color-fondo: hsl(0, 0%, 0%);
+    --color-texto: hsl(50, 100%, 65%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Audiowide", sans-serif;
+}
+
+header {
+    text-align: center;
+    padding-top: 34px;
+}
+
+main {
+  text-align: center;
+  padding: 34px;
+  flex: 1;
+
+}
+
+footer {
+    text-align: center;
+
+}
+
+.logo {
+    width: clamp(120px, 15vw, 215px);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
