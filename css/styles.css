@@ -17,28 +17,130 @@ body {
     display: flex;
     flex-direction: column;
     font-family: "Audiowide", sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
 }
 
 header {
     text-align: center;
-    padding-top: 34px;
+    padding-top: 44px;
+      border-bottom: 2px solid #FFFF00;
+    box-shadow: 0 4px 10px #FFFF00, 0 6px 25px #FFD700;
+    position: relative;
 }
 
 main {
   text-align: center;
-  padding: 34px;
+  padding: 38px;
   flex: 1;
 
 }
 
 footer {
     text-align: center;
+     border-top: 2px solid #FFFF00;
+    box-shadow: 0 -4px 10px #FFFF00, 0 -6px 25px #FFD700;
 
 }
 
 .logo {
-    width: clamp(120px, 15vw, 215px);
-    position: absolute;
+   position: absolute;
     top: 0;
     left: 0;
+    width: clamp(80px, 10vw, 140px);
+   position: absolute;
+    top: 0;
+    left: 0;
+    width: clamp(80px, 10vw, 140px);
+    
+      
+        
+}
+
+.fila-controles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+     width: 100%;
+     padding-top: 3%;
+}
+
+
+.texto-neon {
+    color: #FFFF00;
+    text-shadow:
+        0 0 6px #FFFF00,
+        0 0 20px #FFE000,
+        0 0 40px #FFD700;
+}
+
+
+.fila-controles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+
+.selector-colores,
+.formato-de-colores {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+
+.botones {
+    display: flex;
+    border: 2px solid #FFFF00;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #FFFF00, 0 0 25px #FFD700;
+}
+
+
+.selector-colores button,
+.formato-de-colores button,
+.generar-paleta button {
+    background: transparent;
+    color: #FFFF00;
+    border: none;
+    padding: 0.55rem 1.1rem;
+    font-family: "Audiowide", sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-shadow: 0 0 8px #FFFF00, 0 0 18px #FFD700;
+    transition: all 0.2s ease;
+}
+
+
+.botones button + button {
+    border-left: 1px solid rgba(255, 255, 0, 0.3);
+}
+
+
+.generar-paleta {
+    display: flex;
+    align-items: center;
+    padding-top: 1.6rem;   
+}
+
+.generar-paleta button {
+    border: 2px solid #FFFF00;
+    border-radius: 10px;
+    padding: 0.75rem 2rem;    
+    font-size: 1.05rem;       
+    box-shadow: 0 0 10px #FFFF00, 0 0 25px #FFD700;
+}
+
+.selector-colores button:hover,
+.formato-de-colores button:hover,
+.generar-paleta button:hover {
+    background: #FFFF00;
+    color: #000000;
+    text-shadow: none;
+    box-shadow: 0 0 20px #FFFF00, 0 0 50px #FFD700;
+    cursor: pointer;
 }
