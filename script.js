@@ -103,13 +103,12 @@ function renderizarPaleta() {
     const codSecundario  = esPrincipalHSL ? color.hex : color.hsl;
     const labelSecundario = esPrincipalHSL ? "Copiar HEX" : "Copiar HSL";
 
-    /* tarjeta */
+
     const card = document.createElement("article");
     card.className = "color-card" + (bloqueados.has(i) ? " bloqueado" : "");
     card.style.animationDelay = `${i * 0.05}s`;
     card.setAttribute("aria-label", `Color ${i + 1}: ${codPrincipal}`);
 
-    /* muestra */
     const muestra = document.createElement("div");
     muestra.className = "color-muestra";
     muestra.style.backgroundColor = color.hsl;
@@ -128,7 +127,7 @@ function renderizarPaleta() {
     lockIcon.setAttribute("aria-hidden", "true");
     muestra.appendChild(lockIcon);
 
-    /* info */
+    
     const info = document.createElement("div");
     info.className = "color-info";
 
@@ -186,7 +185,7 @@ function guardarPaleta() {
     colores: coloresActuales.map(({ hsl, hex }) => ({ hsl, hex })),
     fecha: new Date().toLocaleTimeString("es", { hour: "2-digit", minute: "2-digit" }),
   });
-  
+
   guardarLS(paletas);
   renderizarGuardadas();
   mostrarToast("💾 Paleta guardada");
@@ -233,7 +232,7 @@ function renderizarGuardadas() {
       const tooltip = document.createElement("div");
       tooltip.className = "chip-tooltip";
 
-      // Fila HSL
+      
       const filaHsl = document.createElement("div");
       filaHsl.className = "tooltip-fila";
       const spanHsl = document.createElement("span");
@@ -249,7 +248,7 @@ function renderizarGuardadas() {
       });
       filaHsl.append(spanHsl, btnHsl);
 
-      // Fila HEX
+    
       const filaHex = document.createElement("div");
       filaHex.className = "tooltip-fila";
       const spanHex = document.createElement("span");
