@@ -1,61 +1,86 @@
- <!DOCTYPE html>
- <html lang="es">
- <head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Colorfly Studio</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+</head>
 
- </head>
+<body>
 
-    <body>
-        <header>
-            <img src="img/Logo-Colorfly-Studio.png" alt="Logo Colorfly Studio" class="logo">
-                <h1 class="texto-neon">Colorfly Studio</h1>
-                <h2 class="texto-neon">Generador de Paletas de Color</h2>
+    <header>
+    <img src="img/Logo-Colorfly-Studio.png" alt="Logo Colorfly Studio" class="logo">
+    <h1 class="texto-neon">Colorfly Studio</h1>
+    <h2 class="texto-neon">Generador de Paletas de Color</h2>
+    </header>
 
-        </header>
 
-            <main>
-                <p class="texto-neon">Bienvenido a Colorfly Studio, tu herramienta definitiva
-                    para crear y generar paletas de colores aleatorias</p>
-                
-                    <div class="fila-controles">
+    <main>
+    <p class="texto-neon descripcion">
+    Bienvenido a Colorfly Studio, tu herramienta definitiva
+    para crear y generar paletas de colores aleatorias
+    </p>
 
-                    <div class="selector-colores">
-                    <p class="texto-neon">Cantidad de Colores</p>
-                    <div class="botones">
-                        <button>6</button>
-                        <button>8</button>
-                            <button>9</button>
-                    </div>
 
-                    </div>
+    <section class="fila-controles" aria-label="Controles de paleta">
 
-                <div class="formato-de-colores">
-                    <p class="texto-neon">Formato de Color</p>
-                        <div class="botones">
-                        <button>HLS</button>
-                        <button>HEX</button>
-                    </div>
+        <div class="selector-colores">
+        <label class="texto-neon" id="label-cantidad">Cantidad de Colores</label>
+        <div class="botones" role="group" aria-labelledby="label-cantidad">
+            <button data-cantidad="6" aria-pressed="true">6</button>
+            <button data-cantidad="8" aria-pressed="false">8</button>
+            <button data-cantidad="9" aria-pressed="false">9</button>
+        </div>
+    </div>
 
-                </div>
 
-                    <div class="generar-paleta">
-                        <button>Generar Paleta</button>
-                    </div>
+    <div class="formato-de-colores">
+        <label class="texto-neon" id="label-formato">Formato de Color</label>
+        <div class="botones" role="group" aria-labelledby="label-formato">
+        <button data-formato="hsl" aria-pressed="true">HSL</button>
+        <button data-formato="hex" aria-pressed="false">HEX</button>
+        </div>
+    </div>
 
-                </div>
 
-            </main>
+        <div class="generar-paleta">
+        <button id="btn-generar" aria-label="Generar nueva paleta de colores">
+        Generar Paleta
+        </button>
+        </div>
+        
+        <button id="btn-guardar" aria-label="Guardar paleta actual">
+        💾 Guardar Paleta
+        </button>
+    </section>
 
-            <footer>
-                <p class="texto-neon">© 2026 Colorfly Studio. Todos los derechos reservados.</p>
-            </footer>
 
-            <script src="script.js"></script>
-    </body>
+    <section
+        id="paleta-contenedor"
+        aria-label="Paleta de colores generada"
+        aria-live="polite"
+    ></section>
+
+
+    <section id="seccion-guardadas" aria-label="Paletas guardadas">
+        <h3 class="texto-neon">— Paletas Guardadas —</h3>
+        <div id="guardadas-lista" class="guardadas-lista"></div>
+    </section>
+
+    </main>
+
+
+    <footer>
+    <p class="texto-neon">© 2026 Colorfly Studio. Todos los derechos reservados.</p>
+    </footer>
+
+    <div id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+    <script src="script.js"></script>
+
+</body>
 </html>
